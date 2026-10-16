@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Heartwise — Heart Disease Logistic Regression Demo
 
 A responsive HTML/CSS/JavaScript frontend connected to a Flask API that loads `models/Logisticmodel.pkl`.
@@ -51,3 +52,7 @@ This is an educational project, not a clinical tool. Do not use it to diagnose, 
 ## Model compatibility and safety
 
 The pickle was created with scikit-learn 1.6.1; `requirements.txt` pins that version. Only load pickle files you trust, because deserializing untrusted pickle files can execute code.
+=======
+# HeartHealth
+Heart attack prediction
+>>>>>>> ef74c9ad7af9f1ed4d1f4a5b467f960b8447e1fc

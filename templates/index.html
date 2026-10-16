@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <title>Heart Health | ML Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Heart Health home">
+        <span class="brand-mark">♥</span>
+        <span>heart<span class="brand-light">wise</span></span>
+      </a>
+      <span class="top-pill"><span class="pulse"></span> HEART HEALTH ANALYSIS</span>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">HEART HEALTH · PREDICTIVE ANALYTICS</p>
+          <h1>Understand your<br><span>heart health.</span></h1>
+          <p class="hero-sub">Review the health indicators below to generate a personalized model-based risk estimate.</p>
+          <div class="trust-row">
+            <span><b>✓</b> Local data processing</span>
+            <span><b>✓</b> Fast prediction</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="heart-glow">♥</div>
+          <div class="mini-card"><span class="mini-dot"></span><span>Health profile</span><strong>15 inputs</strong></div>
+        </div>
+      </section>
+
+      <section class="form-card">
+        <div class="form-heading">
+          <div><p class="eyebrow">YOUR PROFILE</p><h2>Personal health details</h2></div>
+          <span class="required-note"><i></i> All fields required</span>
+        </div>
+        <p class="form-intro">Use the same coding and definitions as the dataset used to train your model.</p>
+
+        <form id="prediction-form" novalidate>
+          <div class="fields-grid">
+            {% for feature in features %}
+            <div class="field" data-field="{{ feature.name }}">
+              <label for="{{ feature.name }}">{{ feature.label }} <span>*</span></label>
+              {% if feature.type == "select" %}
+              <select id="{{ feature.name }}" name="{{ feature.name }}" required>
+                <option value="" selected disabled>Select an option</option>
+                {% for option in feature.options %}
+                <option value="{{ option.value }}">{{ option.label }}</option>
+                {% endfor %}
+              </select>
+              {% else %}
+              <input id="{{ feature.name }}" name="{{ feature.name }}" type="number"
+                min="{{ feature.min }}" max="{{ feature.max }}" step="{{ feature.step }}"
+                placeholder="Enter value" required>
+              {% endif %}
+              <small class="field-help">{{ feature.help }}</small>
+              <small class="field-error" aria-live="polite"></small>
+            </div>
+            {% endfor %}
+          </div>
+          <div class="form-actions">
+            <p><span class="lock">▣</span> Details are processed by this local Flask app.</p>
+            <div class="action-buttons">
+              <button type="reset" class="btn btn-secondary">Clear form</button>
+              <button type="submit" class="btn btn-primary" id="submit-btn"><span>Run prediction</span><span class="arrow">↗</span></button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section id="result-card" class="result-card hidden" aria-live="polite">
+        <div class="result-icon" id="result-icon">♥</div>
+        <div class="result-content">
+          <p class="eyebrow">PREDICTION SUMMARY</p>
+          <h2 id="result-title">Prediction result</h2>
+          <p id="result-description"></p>
+          <div id="probability-wrap" class="probability-wrap hidden">
+            <div class="probability-label"><span>Model-estimated probability for class 1</span><strong id="probability-value">—</strong></div>
+            <div class="progress-track"><div id="probability-bar" class="progress-bar"></div></div>
+          </div>
+          <p class="disclaimer" id="result-disclaimer"></p>
+        </div>
+      </section>
+
+      <aside class="notice">
+        <span class="notice-icon">i</span>
+        <p><strong>Clinical note:</strong> This result is a model-generated estimate based on the information provided. It is not a clinical diagnosis; consult a qualified healthcare professional for medical concerns.</p>
+      </aside>
+    </main>
+    <footer><span>HEARTWISE <b>·</b> HEALTH ANALYTICS</span><span>Built with Flask + scikit-learn</span></footer>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

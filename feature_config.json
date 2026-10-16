@@ -1,0 +1,211 @@
+[
+  {
+    "name": "HighBP",
+    "label": "High blood pressure",
+    "type": "select",
+    "options": [
+      {
+        "value": 0,
+        "label": "No"
+      },
+      {
+        "value": 1,
+        "label": "Yes"
+      }
+    ],
+    "help": "Has a doctor ever told you that you have high blood pressure?"
+  },
+  {
+    "name": "HighChol",
+    "label": "High cholesterol",
+    "type": "select",
+    "options": [
+      {
+        "value": 0,
+        "label": "No"
+      },
+      {
+        "value": 1,
+        "label": "Yes"
+      }
+    ],
+    "help": "Have you been told you have high cholesterol?"
+  },
+  {
+    "name": "BMI",
+    "label": "BMI (Body Mass Index)",
+    "type": "number",
+    "min": 10,
+    "max": 100,
+    "step": 0.1,
+    "help": "Enter your BMI value."
+  },
+  {
+    "name": "Smoker",
+    "label": "Smoker",
+    "type": "select",
+    "options": [
+      {
+        "value": 0,
+        "label": "No"
+      },
+      {
+        "value": 1,
+        "label": "Yes"
+      }
+    ],
+    "help": "Use the same smoking definition as your training dataset."
+  },
+  {
+    "name": "Stroke",
+    "label": "History of stroke",
+    "type": "select",
+    "options": [
+      {
+        "value": 0,
+        "label": "No"
+      },
+      {
+        "value": 1,
+        "label": "Yes"
+      }
+    ],
+    "help": "Have you ever been told you had a stroke?"
+  },
+  {
+    "name": "Diabetes",
+    "label": "Diabetes status",
+    "type": "select",
+    "options": [
+      {
+        "value": 0,
+        "label": "No diabetes"
+      },
+      {
+        "value": 1,
+        "label": "Prediabetes / borderline"
+      },
+      {
+        "value": 2,
+        "label": "Diabetes"
+      }
+    ],
+    "help": "Choose the category matching your dataset encoding."
+  },
+  {
+    "name": "PhysActivity",
+    "label": "Physical activity",
+    "type": "select",
+    "options": [
+      {
+        "value": 0,
+        "label": "No"
+      },
+      {
+        "value": 1,
+        "label": "Yes"
+      }
+    ],
+    "help": "Regular physical activity, using your dataset's definition."
+  },
+  {
+    "name": "Fruits",
+    "label": "Eat fruit daily",
+    "type": "select",
+    "options": [
+      {
+        "value": 0,
+        "label": "No"
+      },
+      {
+        "value": 1,
+        "label": "Yes"
+      }
+    ],
+    "help": "Use the definition applied in your training dataset."
+  },
+  {
+    "name": "Veggies",
+    "label": "Eat vegetables daily",
+    "type": "select",
+    "options": [
+      {
+        "value": 0,
+        "label": "No"
+      },
+      {
+        "value": 1,
+        "label": "Yes"
+      }
+    ],
+    "help": "Use the definition applied in your training dataset."
+  },
+  {
+    "name": "HvyAlcoholConsump",
+    "label": "Heavy alcohol consumption",
+    "type": "select",
+    "options": [
+      {
+        "value": 0,
+        "label": "No"
+      },
+      {
+        "value": 1,
+        "label": "Yes"
+      }
+    ],
+    "help": "Use your dataset's original definition."
+  },
+  {
+    "name": "GenHlth",
+    "label": "General health (1 = excellent, 5 = poor)",
+    "type": "number",
+    "min": 1,
+    "max": 5,
+    "step": 1,
+    "help": "Typical BRFSS coding: 1 excellent to 5 poor."
+  },
+  {
+    "name": "MentHlth",
+    "label": "Mental health \u2014 days not good (last 30 days)",
+    "type": "number",
+    "min": 0,
+    "max": 30,
+    "step": 1,
+    "help": "Number of days from 0 to 30."
+  },
+  {
+    "name": "PhysHlth",
+    "label": "Physical health \u2014 days not good (last 30 days)",
+    "type": "number",
+    "min": 0,
+    "max": 30,
+    "step": 1,
+    "help": "Number of days from 0 to 30."
+  },
+  {
+    "name": "DiffWalk",
+    "label": "Difficulty walking or climbing stairs",
+    "type": "select",
+    "options": [
+      {
+        "value": 0,
+        "label": "No"
+      },
+      {
+        "value": 1,
+        "label": "Yes"
+      }
+    ],
+    "help": "Do you have serious difficulty walking or climbing stairs?"
+  },
+  {
+    "name": "Age",
+    "label": "Age category",
+    "type": "number",
+    "min": 1,
+    "max": 13,
+    "step": 1,
+    "help": "If your dataset uses BRFSS age categories, enter its encoded category (often 1\u201313), not years."
+  }
+]
